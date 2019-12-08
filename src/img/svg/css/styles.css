@@ -1,0 +1,22 @@
+.icon-about, 
+.icon-contacts, 
+.icon-home
+ {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -0.1em;
+}
+
+.icon-about>svg, 
+.icon-contacts>svg, 
+.icon-home>svg
+ {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -0.1em;
+}
+
