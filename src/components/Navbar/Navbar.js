@@ -3,10 +3,8 @@ import {NavLink} from 'react-router-dom';
 import classes from './Navbar.css';
 
 const Navbar = () => {
-
-    const cls = classes;
     return (
-        <div className={cls.Navbar}>
+        <div className={classes.Navbar}>
             <img src={require('../../img/logo.png')} alt="logo"/>
             <ul>
                 <li>
