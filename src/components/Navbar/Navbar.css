@@ -1,5 +1,30 @@
 .Navbar {
-    width: 50px;
+    width: auto;
     height: 48px;
-    background-color: #4a90e2;
+    background: rgb(65,87,101);
+    background: linear-gradient(90deg, rgba(65,87,101,1) 0%, rgba(66,89,103,1) 100%);
+    border-bottom: 3px solid #292929;
+}
+
+.Logo {
+    float: left;
+}
+
+.Navbar ul {
+    text-align: center;
+}
+
+.Navbar ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.Navbar ul li img {
+    width: 50px;
+    height: 50px;
+    filter: invert(100%);
+}
+
+.Navbar ul li img:hover {
+    filter: invert(0%);
 }

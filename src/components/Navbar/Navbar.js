@@ -5,19 +5,22 @@ import classes from './Navbar.css';
 const Navbar = () => {
     return (
         <div className={classes.Navbar}>
-            <img src={require('../../img/logo.png')} alt="logo"/>
+            <img className={classes.Logo} src={require('../../img/logo.png')} alt="logo"/>
             <ul>
                 <li>
-                    <a href="#">Active</a>
+                    <NavLink exact to="/" className="nav-link">
+                        <img src={require('../../img/svg/home-solid.svg')} alt="home"/>
+                    </NavLink>
                 </li>
                 <li>
-                    <a href="#">Link</a>
+                    <NavLink to="/about" className="nav-link">
+                        <img src={require('../../img/svg/address-card-solid.svg')} alt="home"/>
+                    </NavLink>
                 </li>
                 <li>
-                    <a href="#">Link</a>
-                </li>
-                <li>
-                    <a href="#">Disabled</a>
+                    <NavLink to="/about" className="nav-link">
+                        <img src={require('../../img/svg/file-signature-solid.svg')} alt="home"/>
+                    </NavLink>
                 </li>
             </ul>
         </div>
