@@ -18,7 +18,7 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/about" className="nav-link">
+                    <NavLink to="/contacts" className="nav-link">
                         <img src={require('../../img/svg/file-signature-solid.svg')} alt="home"/>
                     </NavLink>
                 </li>
