@@ -3,25 +3,58 @@ import {NavLink} from 'react-router-dom';
 import classes from './Navbar.css';
 
 const Navbar = () => {
+    const navProps = [
+        {
+            to: '/',
+            svgName: 'home-solid.svg',
+            alt: 'home',
+            exact: true
+        },
+        {
+            to: '/about',
+            svgName: 'address-card-solid.svg',
+            alt: 'about',
+            exact: false
+        },
+        {
+            to: '/contacts',
+            svgName: 'file-signature-solid.svg',
+            alt: 'contacts',
+            exact: false
+        },
+    ];
+
+    const renderLinks = (links) => {
+
+        return links.map((link, index) => {
+           return (
+               <li key={index}>
+                   <NavLink
+                       activeClassName={classes.NavLinkActive}
+                       exact={link.exact}
+                       to={link.to}
+                   >
+                       <img
+                           className={classes.NavImg}
+                           src={require('../../img/svg/' + link.svgName)}
+                           alt={link.alt}
+                       />
+                   </NavLink>
+               </li>
+           )
+        });
+    };
+
     return (
+
         <div className={classes.Navbar}>
-            <img className={classes.Logo} src={require('../../img/logo.png')} alt="logo"/>
+            <img
+                className={classes.Logo}
+                src={require('../../img/logo.png')}
+                alt="logo"
+            />
             <ul>
-                <li>
-                    <NavLink exact to="/" className="nav-link">
-                        <img src={require('../../img/svg/home-solid.svg')} alt="home"/>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/about" className="nav-link">
-                        <img src={require('../../img/svg/address-card-solid.svg')} alt="home"/>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/contacts" className="nav-link">
-                        <img src={require('../../img/svg/file-signature-solid.svg')} alt="home"/>
-                    </NavLink>
-                </li>
+                {renderLinks(navProps)}
             </ul>
         </div>
 

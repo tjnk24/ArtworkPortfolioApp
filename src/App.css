@@ -11,3 +11,7 @@ ul {
 li {
     list-style-type: none;
 }
+
+.MainWrap {
+    min-width: 600px;
+}
