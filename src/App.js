@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contacts from "./pages/Contacts/Contacts";
+import ImgProfile from './pages/ImgProfile/ImgProfile';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
                   <Route path="/about" component={About} />
                   <Route path="/contacts" component={Contacts} />
               </Switch>
+              <ImgProfile/>
           </div>
       </BrowserRouter>
 
