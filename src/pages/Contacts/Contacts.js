@@ -3,8 +3,11 @@ import classes from './Contacts.css';
 
 const Contacts = () => {
     return (
-        <div>
-            <h1>Contacts</h1>
+        <div className={classes.Contacts}>
+            <div>
+                <h1>Напишите мне! Спасибо за просмотр!</h1>
+                <p>tripjunkie24@gmail.com</p>
+            </div>
         </div>
     );
 };
