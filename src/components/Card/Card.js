@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './Card.css';
-import ImgProfile from '../../pages/ImgProfile/ImgProfile';
 
  const Card = (props) => {
 
