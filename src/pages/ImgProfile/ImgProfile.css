@@ -1,9 +1,9 @@
 .ImgProfile {
     position: fixed;
     z-index: 1;
-    /* padding-top: 20px; */
     left: 0;
     top: 0;
+    padding-top: 20px;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -11,10 +11,10 @@
 }
 .ImgProfileWrap {
     position: relative;
-    /* border: 1px solid #888;
-    width: 90%;
-    height: 90%; */
-    /* display: flex; */
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
 }
 
 .ImgWrap {
@@ -24,9 +24,7 @@
 
 .ImgWrap img {
     max-width: 100%;
-    max-height: 100vh;
-    margin: auto;
-    /* width: min-content; */
+    max-height: 95vh;
 }
 
 .VerticalLine {
@@ -35,7 +33,20 @@
 }
 
 .SideBlock {
-    min-width: 500px;
+    min-width: 200px;
+    width: 400px;
     background-color: #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
 }
 
+.SideBlock h1 {
+    font-size: 18px;
+}
+
+.SideBlock p {
+    margin-top: 20px;
+    font-size: 14px;
+}
