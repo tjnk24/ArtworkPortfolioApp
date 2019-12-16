@@ -1,10 +1,30 @@
-import React from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import classes from './ImgProfile.css';
 
 const ImgProfile = (props) => {
+
+    const imgProfileWrap = useRef();
+    
+    const [winHeight, setWinHeight] = useState(document.documentElement.clientHeight);
+
+    function handleResize(height) {
+        
+        console.log(document.documentElement.clientHeight, height)
+      
+    }
+
+    useEffect(() => {
+
+        const imgWrapHeight = imgProfileWrap.current.clientHeight;
+        window.addEventListener('resize', function(){handleResize(imgWrapHeight)})
+        // window.addEventListener('resize', console.log(document.documentElement.clientHeight));
+        // setWinHeight(document.documentElement.clientHeight);
+        // console.log(winHeight);
+    }, []);
+    
     return (
-        <div className={classes.ImgProfile}>
-            <div className={classes.ImgProfileWrap}>
+        <div className={classes.ImgProfile} style={{padding: '20px'}} >
+            <div className={classes.ImgProfileWrap} ref={imgProfileWrap} >
                 <div className={classes.ImgWrap}>
                     <img src={require('../../img/arts_hd_folder/1.jpg')} alt="artwork"/>
                 </div>
