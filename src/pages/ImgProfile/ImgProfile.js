@@ -5,25 +5,23 @@ const ImgProfile = (props) => {
 
     const imgProfileWrap = useRef();
     
-    const [winHeight, setWinHeight] = useState(document.documentElement.clientHeight);
+    const [wrapPadding, setwrapPadding] = useState(0);
 
-    function handleResize(height) {
+    function countModalPadding(height) {
+        let diff = document.documentElement.clientHeight - height;
+        setwrapPadding(diff * 0.5 );
+        // console.log(document.documentElement.clientHeight - height)
         
-        console.log(document.documentElement.clientHeight, height)
-      
     }
 
     useEffect(() => {
 
-        const imgWrapHeight = imgProfileWrap.current.clientHeight;
-        window.addEventListener('resize', function(){handleResize(imgWrapHeight)})
-        // window.addEventListener('resize', console.log(document.documentElement.clientHeight));
-        // setWinHeight(document.documentElement.clientHeight);
-        // console.log(winHeight);
+        window.addEventListener('resize', function(){countModalPadding(imgProfileWrap.current.clientHeight)})
+
     }, []);
     
     return (
-        <div className={classes.ImgProfile} style={{padding: '20px'}} >
+        <div className={classes.ImgProfile} style={{paddingTop: wrapPadding}} >
             <div className={classes.ImgProfileWrap} ref={imgProfileWrap} >
                 <div className={classes.ImgWrap}>
                     <img src={require('../../img/arts_hd_folder/1.jpg')} alt="artwork"/>
