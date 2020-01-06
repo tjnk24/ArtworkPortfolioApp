@@ -18,7 +18,7 @@ function App() {
                   <Route path="/about" component={About} />
                   <Route path="/contacts" component={Contacts} />
               </Switch>
-              
+
           </div>
       </BrowserRouter>
 
