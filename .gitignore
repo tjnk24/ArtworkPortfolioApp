@@ -27,3 +27,4 @@ app/.idea
 app/.vscode
 
 app/package-lock.json
+app/yarn.lock
