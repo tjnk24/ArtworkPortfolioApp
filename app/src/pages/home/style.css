@@ -1,0 +1,10 @@
+.Home {
+    margin: 0 auto;
+    max-width: 725px;
+    padding: 25px;
+    overflow: auto;
+}
+
+@media (max-width: 775px) {
+    .Home {max-width: 545px;}
+}
