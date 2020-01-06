@@ -1,0 +1,28 @@
+{
+  "name": "artwork-api",
+  "version": "0.0.1",
+  "description": "Artwork portfolio server api",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjnk24/ArtworkPortfolioApp.git"
+  },
+  "author": "tjnk24",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjnk24/ArtworkPortfolioApp/issues"
+  },
+  "homepage": "https://github.com/tjnk24/ArtworkPortfolioApp#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "image-size": "^0.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
