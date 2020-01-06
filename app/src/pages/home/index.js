@@ -4,9 +4,8 @@ import classes from './style.css';
 // import ImgProfile from '../../pages/img-profile';
 import Carousel, { Modal, ModalGateway } from "react-images";
 import PhotoGallery from 'react-photo-gallery';
-import sizeOf from 'image-size';
 
-import imgLinks from '../../components/imgLinks'
+import { getPhotos } from '../../helpers/api';
 
 const Home = () => {
     const [profileOpened, setProfileOpened] = useState(false)
@@ -30,46 +29,19 @@ const Home = () => {
         setProfileOpened(false);
     };
 
-    const makeImgArray = (arr) => {
-
-        let tempArr = [];
-
-
-
-
-        arr.map((imgLink, i) => {
-
-            tempArr[i] = {
-                src: require(`../../img/arts_hd_folder/${imgLink}`),
-                width: 1,
-                height: 1
-            }
-        })
-
-        return tempArr;
-    }
-
-    const calcDimensions = () => {
-        var dimensions = sizeOf('../../img/arts_hd_folder/1.jpg');
-        console.log(dimensions.width, dimensions.height);
-
-    }
-
      useEffect(() => {
-
-        calcDimensions();
-        setPhotos(makeImgArray(imgLinks))
+        getPhotos().then(setPhotos);
     }, []);
 
     return (
         <div>
             <div className={classes.Home}>
-                <PhotoGallery
+                {/* <PhotoGallery
                     photos={photos}
                     direction={'column'}
                     columns={4}
                     onClick={openLightbox}
-                />
+                /> */}
             </div>
             <ModalGateway>
                 {profileOpened && (
