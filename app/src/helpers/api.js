@@ -4,7 +4,7 @@ export async function getPhotos () {
 
     console.log('trying to get photos...');
 
-    const response = await fetch(`${API_URL}/photos`);
+    const response = await fetch(`${API_URL}/photo`);
     const photoData = await response.json();
 
     console.log(photoData);

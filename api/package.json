@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "nodemon src/"
+    "start-dev": "nodemon src/index.js --exec babel-node"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,15 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "image-size": "^0.8.3"
+    "image-size": "^0.8.3",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
     "nodemon": "^2.0.2"
   }
 }
