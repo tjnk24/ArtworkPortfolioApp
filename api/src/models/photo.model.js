@@ -21,6 +21,14 @@ const PhotoSchema = {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    header: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    text: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
 };
 
 class Photo extends Model {

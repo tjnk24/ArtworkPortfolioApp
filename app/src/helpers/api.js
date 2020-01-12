@@ -1,23 +1,19 @@
-const API_URL = 'http://localhost:3002';
+const API_URL = 'http://localhost:3001';
 
 export async function getPhotos () {
-
-    console.log('trying to get photos...');
-
     const response = await fetch(`${API_URL}/photo`);
     const photoData = await response.json();
 
-    console.log(photoData);
+    if (!photoData.success || photoData.photos.count < 1)
+        return [];
 
-    // if (!photoData.success || photoData.photos.count < 1)
-    //     return [];
-
-    if (!photoData.success)
-           return [];
-
-    // return photoData.photos.rows.map(photo => ({
-    //     src: `${API_URL}/photos/${photo.filename}`,
-    //     width: 1,
-    //     height: 1,
-    // }));
+    return photoData.photos.rows.map(photo => {
+        return {
+            src: `${API_URL}/photo/${photo.dataValues.filename}`,
+            width: photo.width,
+            height: photo.height,
+            header: photo.dataValues.header,
+            text: photo.dataValues.text
+        }
+    });
 };

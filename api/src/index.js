@@ -1,11 +1,11 @@
 import http from 'http';
 import cors from 'cors';
 import express from 'express';
-import { resolve } from 'path';
+import { resolve, join } from 'path';
 import { Sequelize } from 'sequelize';
 import sizeOf from 'image-size';
 
-import PhotoModel from './photo.model';
+import PhotoModel from './models/photo.model';
 
 const config = {
     port: 3001,
@@ -31,34 +31,37 @@ const database = new Sequelize(config.database);
 // initialize models
 const Photo = PhotoModel.init(database);
 
-app.get('/', (req, res) => {
+database.sync().then(() => {
+    app.get('/', (req, res) => {
 
-    res.send("Hello W!");
+        res.send("Hello W!");
+    });
+
+    app.get('/photo', async (req, res) => {
+        const photoDbData = await Photo.findAndCountAll();
+
+        const photos = {
+            count: photoDbData.count
+        };
+
+        photos.rows = photoDbData.rows.map(photo => {
+
+            const imgProps = sizeOf(`../api/uploads/${photo.dataValues.filename}`);
+
+            return {
+                width: imgProps.width,
+                height: imgProps.height,
+                dataValues: photo.dataValues
+            }
+        });
+
+        res.send({success: true, photos});
+    });
+
+    app.get("/photo/:filename", (req, res) => {
+        res.sendFile(join(config.uploadDir, `/${req.params.filename}`));
+    });
 });
-
-// app.get('/photos', async (req, res) => {
-
-//     // const photos = await Photo.findAndCountAll();
-//     // res.json({success: true, photos});
-
-//     res.json({success: true, test: 'getting photos!'});
-// });
-
-app.get('/photo', async (req, res) => {
-    // const dimensions = sizeOf('../api/uploads/0a9f3cf15f97db10d2d6300674a9b683');
-
-    // console.log(dimensions);
-    const photos = await Photo.findAndCountAll();
-    res.json({success: true, photos});
-});
-
-// http.createServer(function(request, response){
-
-//     response.end("Hello world!");
-// }).listen(3002);
-
-const dimensions = sizeOf('./photos/1.jpg');
-console.log(dimensions.width, dimensions.height);
 
 app.server.listen(process.env.PORT || config.port, () => {
     console.log(`Started on port ${app.server.address().port}`);

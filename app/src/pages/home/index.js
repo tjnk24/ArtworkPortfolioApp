@@ -5,12 +5,16 @@ import classes from './style.css';
 import Carousel, { Modal, ModalGateway } from "react-images";
 import PhotoGallery from 'react-photo-gallery';
 
+import CustomView from '../../components/custom-view';
 import { getPhotos } from '../../helpers/api';
+
+
 
 const Home = () => {
     const [profileOpened, setProfileOpened] = useState(false)
     const [currentImage, setCurrentImage] = useState(0);
 
+    const [isLoading, setIsLoading] = useState(true);
     const [photos, setPhotos] = useState([]);
 
     // const renderLinks = (links) => {
@@ -30,29 +34,31 @@ const Home = () => {
     };
 
      useEffect(() => {
-        getPhotos().then(setPhotos);
+        getPhotos().then(res => {
+            setPhotos(res);
+            setIsLoading(false);
+        });
     }, []);
 
     return (
         <div>
             <div className={classes.Home}>
-                {/* <PhotoGallery
-                    photos={photos}
-                    direction={'column'}
-                    columns={4}
-                    onClick={openLightbox}
-                /> */}
+                {!isLoading && (
+                    <PhotoGallery
+                        photos={photos}
+                        direction={'column'}
+                        columns={4}
+                        onClick={openLightbox}
+                    />
+                )}
             </div>
             <ModalGateway>
                 {profileOpened && (
                     <Modal onClose={closeLightbox}>
                         <Carousel
                             currentIndex={currentImage}
-                            views={photos.map(x => ({
-                                ...x,
-                                srcset: x.srcSet,
-                                caption: x.title
-                            }))}
+                            views={photos}
+                            components={{ View: CustomView }}
                         />
                     </Modal>
                 )}
