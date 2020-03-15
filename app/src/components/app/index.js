@@ -6,7 +6,7 @@ import {
     Redirect,
     withRouter
 } from 'react-router-dom';
-import classes from './style.css';
+import classes from './style';
 import Navbar from "../navbar";
 import Home from "../../pages/home";
 import About from "../../pages/about";

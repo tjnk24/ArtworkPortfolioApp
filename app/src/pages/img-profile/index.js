@@ -1,15 +1,16 @@
 import React, {useState, useEffect, useRef} from 'react'
-import classes from './style.css';
+import classes from './style';
 
 const ImgProfile = (props) => {
-    
+
     const imgProfile = useRef();
-    
+
     const [imgPadding, setImgPadding] = useState(0);
 
     const countPadding = () => {
         let diff = document.documentElement.clientHeight - imgProfile.current.clientHeight;
-        setImgPadding(diff * 0.5 )
+        setImgPadding(diff * 0.5 );
+        // let a = 0;
     }
 
     useEffect(() => {
@@ -22,9 +23,9 @@ const ImgProfile = (props) => {
             <div style={{paddingTop: imgPadding}} >
                 <div className={classes.ImgProfile} ref={imgProfile} >
                     <div className={classes.ImgWrap}>
-                        <img 
+                        <img
                         src={require('../../img/arts_hd_folder/1.jpg')}
-                        onLoad={countPadding.bind(this)} 
+                        onLoad={countPadding.bind(this)}
                         alt="artwork"/>
                     </div>
                     <div className={classes.VerticalLine}></div>
@@ -35,7 +36,7 @@ const ImgProfile = (props) => {
                 </div>
             </div>
         </div>
-        
+
     )
 }
 

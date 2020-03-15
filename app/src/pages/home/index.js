@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import classes from './style.css';
+import classes from './style';
 // import Card from '../../components/card';
 // import ImgProfile from '../../pages/img-profile';
 import Carousel, { Modal, ModalGateway } from "react-images";

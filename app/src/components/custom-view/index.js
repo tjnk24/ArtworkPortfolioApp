@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './style.css';
+import classes from './style';
 
 const CustomView = (props) => props.isModal ? (
     // <div className={classes.View}>
