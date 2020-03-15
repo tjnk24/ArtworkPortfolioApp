@@ -1,0 +1,61 @@
+.ImgContainer {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.Backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 50%;
+}
+
+.ImgProfile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+}
+
+.ImgWrap {
+    display: grid;
+    height: 100%;
+
+    img {
+        max-width: 100%;
+        max-height: 95vh;
+    }
+}
+
+
+.VerticalLine {
+    min-width: 14px;
+    background-color: #b3aa9f;
+}
+
+.SideBlock {
+    min-width: 200px;
+    width: 400px;
+    background-color: #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+
+    h1 {
+        font-size: 1vw;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 0.8vw;
+    }
+}
+
