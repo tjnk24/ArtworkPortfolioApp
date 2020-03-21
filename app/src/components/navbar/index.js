@@ -30,9 +30,9 @@ const Navbar = () => {
            return (
                <li key={index}>
                    <NavLink
-                       activeClassName={classes.NavLinkActive}
-                       exact={link.exact}
-                       to={link.to}
+                        activeClassName={classes.NavLinkActive}
+                        exact={link.exact}
+                        to={link.to}
                    >
                        <img
                            className={classes.NavImg}
@@ -46,18 +46,24 @@ const Navbar = () => {
     };
 
     return (
-
-        <div className={classes.Navbar}>
-            <img
-                className={classes.Logo}
-                src={require('../../img/logo.png')}
-                alt="logo"
-            />
-            <ul>
-                {renderLinks(navProps)}
-            </ul>
+        <div className={classes.NavbarWrap}>
+            <div className={classes.Navbar}>
+                <NavLink
+                    className={classes.Logo}
+                    exact={true}
+                    to={'/'}
+                >
+                    <img
+                        src={require('../../img/logo.png')}
+                        alt="logo"
+                    />
+                </NavLink>
+                <ul>
+                    {renderLinks(navProps)}
+                </ul>
+            </div>
+            <div className={classes.gradientBefore}></div>
         </div>
-
     );
 };
 

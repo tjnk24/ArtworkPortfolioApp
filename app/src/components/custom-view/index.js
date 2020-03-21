@@ -5,13 +5,12 @@ const CustomView = (props) => props.isModal ? (
     // <div className={classes.View}>
     //   <img src={props.data.src} alt={`${props.currentIndex}`}/>
     // </div>
-    <div className={classes.View} >
-        <div className={classes.ViewWrap}>
+    <div className={classes.ViewWrap} >
+        <div className={classes.View}>
             <img
             src={props.data.src}
             alt={`${props.currentIndex}`}
             />
-            <div className={classes.VerticalLine}></div>
             <div className={classes.SideBlock}>
                 <h1>{props.data.header}</h1>
                 <p>{props.data.text}</p>

@@ -23,6 +23,14 @@ const Home = () => {
     //     })
     // }
 
+    const columns = containerWidth => {
+        let columns = 1;
+            if (containerWidth >= 400) columns = 2;
+            if (containerWidth >= 560) columns = 3;
+            if (containerWidth >= 720) columns = 4;
+        return columns;
+    }
+
     const openLightbox = useCallback((event, { photo, index }) => {
         setCurrentImage(index);
         setProfileOpened(true);
@@ -47,7 +55,7 @@ const Home = () => {
                     <PhotoGallery
                         photos={photos}
                         direction={'column'}
-                        columns={4}
+                        columns={columns}
                         onClick={openLightbox}
                     />
                 )}
@@ -56,6 +64,7 @@ const Home = () => {
                 {profileOpened && (
                     <Modal onClose={closeLightbox}>
                         <Carousel
+                            style={classes}
                             currentIndex={currentImage}
                             views={photos}
                             components={{ View: CustomView }}
