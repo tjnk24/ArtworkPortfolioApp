@@ -36,7 +36,7 @@ const Navbar = () => {
                    >
                        <img
                            className={classes.NavImg}
-                           src={require('../../img/svg/' + link.svgName)}
+                           src={require('./img/' + link.svgName)}
                            alt={link.alt}
                        />
                    </NavLink>
@@ -54,7 +54,7 @@ const Navbar = () => {
                     to={'/'}
                 >
                     <img
-                        src={require('../../img/logo.png')}
+                        src={require('./img/logo.png')}
                         alt="logo"
                     />
                 </NavLink>

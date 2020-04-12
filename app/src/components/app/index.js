@@ -38,7 +38,7 @@ function App(props) {
                 <div className={classes.MainWrap}  >
                     { props.location.pathname!=='/auth' ? <Navbar/> : null }
                     <Switch>
-                        <Route path="/" exact render={(props) => <Home /> }/>
+                        <Route path="/" exact component={Home} />
                         <Route path="/about" component={About} />
                         <Route path="/contacts" component={Contacts} />
                         <Route path="/auth" component={Auth} />
@@ -46,7 +46,6 @@ function App(props) {
                     </Switch>
                 </div>
             </BrowserRouter>
-            {/* {loaded = true} */}
         </React.Fragment>
     );
 }

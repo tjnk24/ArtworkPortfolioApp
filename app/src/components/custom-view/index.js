@@ -28,10 +28,6 @@ const CustomView = (props) => {
         }
     }
 
-    const onCloseHandler = event => {
-        props.modalProps.onClose();
-    }
-
     return props.isModal ? (
 
     <div

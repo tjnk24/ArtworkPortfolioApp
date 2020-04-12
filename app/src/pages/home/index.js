@@ -6,7 +6,7 @@ import PhotoGallery from 'react-photo-gallery';
 import CustomView from '../../components/custom-view';
 import { getPhotos } from '../../helpers/api';
 
-const Home = React.forwardRef((props, ref) => {
+const Home = () => {
     const [profileOpened, setProfileOpened] = useState(false)
     const [currentImage, setCurrentImage] = useState(0);
 
@@ -65,6 +65,6 @@ const Home = React.forwardRef((props, ref) => {
             </ModalGateway>
         </div>
     );
-});
+};
 
 export default Home;
