@@ -1,6 +1,6 @@
 const API_URL = 'http://localhost:3001';
 
-export async function getPhotos () {
+const getPhotos = async () => {
     const response = await fetch(`${API_URL}/photo`);
     const photoData = await response.json();
 
@@ -17,3 +17,5 @@ export async function getPhotos () {
         }
     });
 };
+
+export default getPhotos;

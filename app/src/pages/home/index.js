@@ -4,7 +4,7 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 import PhotoGallery from 'react-photo-gallery';
 
 import CustomView from '../../components/custom-view';
-import { getPhotos } from '../../helpers/api';
+import getPhotos from '../../helpers/api';
 
 const Home = () => {
     const [profileOpened, setProfileOpened] = useState(false)
