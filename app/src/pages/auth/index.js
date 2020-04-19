@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classes from './style';
 
-export default function Auth() {
+const Auth = () => {
 
     const [loginValue, setLoginValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
@@ -35,3 +35,5 @@ export default function Auth() {
         </div>
     )
 }
+
+export default Auth;
