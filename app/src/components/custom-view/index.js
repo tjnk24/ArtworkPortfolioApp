@@ -4,10 +4,7 @@ import SideBlock from './parts/side-block';
 
 import classes from './style';
 
-const CustomView = (props) => {
-
-    return props.isModal ? (
-
+const CustomView = props => props.isModal ? (
     <div
         className={classes.ViewWrap}
         onClick={props.modalProps.onClose}
@@ -22,6 +19,5 @@ const CustomView = (props) => {
         </div>
     </div>
   ) : null;
-}
 
 export default CustomView;

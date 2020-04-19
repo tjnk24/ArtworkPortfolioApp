@@ -3,7 +3,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 import classes from './style';
 
-const SideBlock = (props) => {
+const SideBlock = props => {
     const sideBlockRef = useRef(null);
     const textRef = useRef(null);
 

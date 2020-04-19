@@ -14,7 +14,7 @@ import Auth from '../../pages/auth';
 
 import classes from './style';
 
-const App = (props) => {
+const App = props => {
     return (
         <React.Fragment>
             <BrowserRouter>

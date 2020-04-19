@@ -1,8 +1,7 @@
 import React from 'react';
 import classes from './style';
 
-const About = () => {
-    return (
+const About = () => (
         <div className={classes.About}>
             <div>
                 <h1>Привет!</h1>
@@ -24,6 +23,5 @@ const About = () => {
             </div>
         </div>
     );
-};
 
 export default About;
