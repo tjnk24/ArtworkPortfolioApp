@@ -1,56 +1,8 @@
-# dependencies
-app/node_modules
-api/node_modules
-
-app/.pnp
-api/.pnp
-
-app/.pnp.js
-api/.pnp.js
-
-# testing
-app/coverage
-api/coverage
-
-# production
-app/build
-api/build
-
-# misc
-app/.DS_Store
-api/.DS_Store
-
-app/.env.local
-api/.env.local
-
-app/.env.development.local
-api/.env.development.local
-
-app/.env.test.local
-api/.env.test.local
-
-app/.env.production.local
-api/.env.production.local
-
-app/npm-debug.log*
-api/npm-debug.log*
-
-app/yarn-debug.log*
-api/yarn-debug.log*
-
-app/yarn-error.log*
-api/yarn-error.log*
-
-#webstorm folder
-app/.idea
-api/.idea
-
-#vscode folder
-app/.vscode
-api/.vscode
-
-app/package-lock.json
-api/package-lock.json
-
-app/yarn.lock
-api/yarn.lock
+.idea/
+build/
+node_modules/
+.env
+*.log
+.gitmodules
+.DS_Store
+.realsync
