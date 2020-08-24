@@ -1,8 +1,4 @@
-.idea/
 build/
 node_modules/
 .env
 *.log
-.gitmodules
-.DS_Store
-.realsync
