@@ -13,6 +13,7 @@
             "@components/*": ["src/components/*"],
             "@pages/*": ["src/pages/*"],
             "@helpers/*": ["src/helpers/*"],
-        }
+        },
+        "typeRoots" : ["node_modules/@types", "src/types"]
     }
 }

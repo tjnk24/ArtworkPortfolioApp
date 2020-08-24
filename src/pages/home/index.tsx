@@ -62,11 +62,9 @@ const Home: FC = () => {
         {profileOpened && (
         <Modal closeOnBackdropClick onClose={closeLightbox}>
           <Carousel
-            // style={classes}
             currentIndex={currentImage}
             views={photos}
             components={{ View: CustomView }}
-            // showNavigationOnTouchDevice={false}
           />
         </Modal>
         )}

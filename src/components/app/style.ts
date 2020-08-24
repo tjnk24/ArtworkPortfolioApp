@@ -1,16 +1,19 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
+import RalewayRegular from './fonts/Raleway-Regular.ttf';
+import RalewayBold from './fonts/Raleway-Bold.ttf';
+
 export const GlobalStyles = createGlobalStyle`
-    @font-face{
+    @font-face {
         font-family: 'raleway';
-        src: url('./fonts/Raleway-Regular.ttf') format('truetype');
+        src: url(${RalewayRegular}) format('truetype');
         font-weight: normal;
         font-style: normal;
     }
 
-    @font-face{
+    @font-face {
         font-family: 'raleway';
-        src: url('./fonts/Raleway-Bold.ttf') format('truetype');
+        src: url(${RalewayBold}) format('truetype');
         font-weight: bold;
         font-style: normal;
     }

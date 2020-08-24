@@ -1,9 +1,9 @@
 {
-  "name": "react-boilerplate",
+  "name": "artwork-portfolio-app",
   "version": "1.0.0",
-  "description": "react-boilerplate",
+  "description": "artwork-portfolio-app",
   "main": "src/index.js",
-  "repository": "https://github.com/tjnk24/ReactBoilerplate.git",
+  "repository": "https://github.com/tjnk24/ArtworkPortfolioApp.git",
   "author": "tjnk24 <tjnk24@gmail.com>",
   "license": "MIT",
   "private": true,
@@ -13,9 +13,7 @@
     "lint": "eslint ./src/**"
   },
   "dependencies": {
-    "bootstrap": "^4.5.0",
     "react": "^16.13.1",
-    "react-bootstrap": "^1.0.1",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.13.1",
     "react-images": "^1.1.7",
@@ -25,7 +23,6 @@
   "devDependencies": {
     "@babel/preset-react": "^7.10.1",
     "@types/react": "^16.9.37",
-    "@types/react-bootstrap": "^1.0.1",
     "@types/react-custom-scrollbars": "^4.0.7",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
@@ -34,6 +31,7 @@
     "@typescript-eslint/parser": "^3.3.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
+    "dotenv": "^8.2.0",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "2.20.1",

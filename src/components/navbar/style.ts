@@ -5,6 +5,11 @@ export const NavbarWrap = styled.div`
   position: sticky;
   top: 0;
   z-index: 2;
+
+  svg {
+    width: 30px;
+    filter: invert(100%);
+  }
 `;
 
 export const NavbarInner = styled.div`
@@ -38,7 +43,7 @@ export const NavbarInner = styled.div`
           margin-left: 30px;
       }
 
-      li img {
+      li svg {
           width: 30px;
 
           @media(max-width: 400px) {
@@ -46,7 +51,7 @@ export const NavbarInner = styled.div`
           }
 
           :hover {
-            filter: invert(0%);
+            filter: invert(80%);
           }
       }
   }
@@ -73,15 +78,7 @@ export const Logo = styled(NavLink)`
 
   img {
     width: 110px;
-
-    /* @media(max-width: 400px) {
-        width: 150px;
-    } */
   }
-`;
-
-export const NavImg = styled.img`
-  filter: invert(100%);
 `;
 
 const activeClassName = 'active';
@@ -90,7 +87,7 @@ export const NavLinkWrap = styled(NavLink).attrs({
   activeClassName,
 })`
   &.${activeClassName} {
-    img {
+    svg, svg:hover {
       filter: invert(0%);
     }
   }

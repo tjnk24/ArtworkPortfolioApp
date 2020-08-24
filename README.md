@@ -4,4 +4,3 @@
  - TypeScript
  - Eslint
  - styled-components
- - ReactBootstrap

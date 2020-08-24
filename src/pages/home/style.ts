@@ -9,11 +9,11 @@ const HomeWrap = styled.div`
   img:hover {
       animation: light-up 0.1s ease-in forwards;
   }
-`;
 
-// @keyframes light-up {
-//   60% { opacity: 0.8; }
-//   100% { opacity: 0.7; }
-// }
+  @keyframes light-up {
+    60% { opacity: 0.8; }
+    100% { opacity: 0.7; }
+  }
+`;
 
 export default HomeWrap;

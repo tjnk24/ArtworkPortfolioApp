@@ -6,10 +6,10 @@ import {
   Redirect,
   withRouter,
 } from 'react-router-dom';
+import Navbar from '@components/navbar';
 import Home from '@pages/home';
 import About from '@pages/about';
 import Contacts from '@pages/contacts';
-import Navbar from '../navbar';
 
 import { GlobalStyles, MainWrap } from './style';
 

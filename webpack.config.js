@@ -1,9 +1,21 @@
 const path = require('path');
+const dotenv = require('dotenv');
+const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 const development = process.env.NODE_ENV !== 'production';
+
+const env = dotenv.config().parsed;
+
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  const previous = prev;
+  previous[`process.env.${next}`] = JSON.stringify(env[next]);
+  return previous;
+}, {});
 
 const cssLoaders = [
   {
@@ -49,13 +61,14 @@ module.exports = {
         use: cssLoaders,
       },
       {
-        test: /\.(png|jpg|gif|svg|ttf|woff|woff2|mp4)$/,
+        test: /\.(png|jpg|gif|svg|ttf|woff|woff2|mp4|ico)$/,
         loader: 'file-loader',
         options: {
           context: path.resolve(__dirname, 'src'),
           publicPath: '',
           name: development ? '[path][name].[ext]' : '[name]-[hash:6].[ext]',
           limit: 1000,
+          esModule: false,
         },
       },
     ],
@@ -70,6 +83,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      ...envKeys,
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// $mobile-large: 640px;
+const sizeMobile = '640px';
 
 const SideBlockView = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ const SideBlockView = styled.div`
       display: none;
   }
 
-  @media(max-width: $mobile-large) {
+  @media(max-width: ${sizeMobile}) {
       width: 100%;
       max-width: 100%;
       max-height: 20vh;
@@ -27,7 +27,7 @@ const SideBlockView = styled.div`
       flex-grow: 1;
       height: 0;
 
-      @media(max-width: $mobile-large) {
+      @media(max-width: ${sizeMobile}) {
           width: 0;
           height: auto;
       }
@@ -40,7 +40,7 @@ const SideBlockView = styled.div`
           display: block;
           font-size: 18px;
 
-          @media(max-width: $mobile-large) {
+          @media(max-width: ${sizeMobile}) {
               text-align: center;
           }
       }

@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import {
   Logo,
-  NavImg,
   NavbarWrap,
   NavbarInner,
   NavLinkWrap,
@@ -11,8 +10,9 @@ import {
 import {
   HomeIcon,
   AboutIcon,
+  LogoImage,
   ContactsIcon,
-} from './img/icons';
+} from './images';
 import { LinksTypes } from './types';
 
 const Navbar: FC = () => {
@@ -20,19 +20,16 @@ const Navbar: FC = () => {
     {
       to: '/',
       component: HomeIcon,
-      // alt: 'home',
       exact: true,
     },
     {
       to: '/about',
       component: AboutIcon,
-      // alt: 'about',
       exact: false,
     },
     {
       to: '/contacts',
       component: ContactsIcon,
-      // alt: 'contacts',
       exact: false,
     },
   ];
@@ -43,11 +40,6 @@ const Navbar: FC = () => {
         exact={link.exact}
         to={link.to}
       >
-        {/* <NavImg
-          src={require(`./img/${link.svgName}`)}
-          alt={link.alt}
-        /> */}
-
         { link.component }
       </NavLinkWrap>
     </li>
@@ -61,7 +53,7 @@ const Navbar: FC = () => {
           to="/"
         >
           <img
-            src={require('./img/logo.png')}
+            src={LogoImage}
             alt="logo"
           />
         </Logo>

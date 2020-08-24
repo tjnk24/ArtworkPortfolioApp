@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-// $laptop: 1280px;
-// $mobile-large: 640px;
+const size = {
+  laptop: '1280px',
+  mobile: '640px',
+};
 
 export const ViewWrap = styled.div`
   display: flex;
@@ -15,7 +17,7 @@ export const View = styled.div`
   display: flex;
   justify-content: center;
 
-  @media(max-width: $mobile-large) {
+  @media(max-width: ${size.mobile}) {
     max-width: 90%;
     flex-direction: column;
     align-items: center;
@@ -26,11 +28,11 @@ export const View = styled.div`
     max-height: 90vh;
     border-right: 14px solid #b3aa9f;
 
-    @media(max-width: $laptop) {
+    @media(max-width: ${size.laptop}) {
         max-width: 60%;
     }
 
-    @media(max-width: $mobile-large) {
+    @media(max-width: ${size.mobile}) {
         border: none;
         max-width: 100%;
         max-height: 75vh;

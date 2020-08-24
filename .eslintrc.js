@@ -28,6 +28,7 @@ module.exports = {
         'import/extensions': 'off',
         'react/prop-types': 'off',
         'react/jsx-props-no-spreading': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
         'react/jsx-filename-extension': [
             'error',
             {
