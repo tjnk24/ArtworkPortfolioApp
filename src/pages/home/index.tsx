@@ -19,14 +19,14 @@ const Home: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [photos, setPhotos] = useState([]);
 
-  const columns = (containerWidth) => {
-    let columns = 1;
+  const columns = (containerWidth: number) => {
+    let columnsCount = 1;
 
-    if (containerWidth >= 400) columns = 2;
-    if (containerWidth >= 560) columns = 3;
-    if (containerWidth >= 720) columns = 4;
+    if (containerWidth >= 400) columnsCount = 2;
+    if (containerWidth >= 560) columnsCount = 3;
+    if (containerWidth >= 720) columnsCount = 4;
 
-    return columns;
+    return columnsCount;
   };
 
   const openLightbox = useCallback((event, { photo, index }) => {
@@ -62,11 +62,11 @@ const Home: FC = () => {
         {profileOpened && (
         <Modal closeOnBackdropClick onClose={closeLightbox}>
           <Carousel
-            style={classes}
+            // style={classes}
             currentIndex={currentImage}
             views={photos}
             components={{ View: CustomView }}
-            showNavigationOnTouchDevice={false}
+            // showNavigationOnTouchDevice={false}
           />
         </Modal>
         )}

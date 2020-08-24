@@ -4,7 +4,7 @@ import {
   NavImg,
   NavbarWrap,
   NavbarInner,
-  NavLinkActive,
+  NavLinkWrap,
   GradientBefore,
 } from './style';
 
@@ -39,8 +39,7 @@ const Navbar: FC = () => {
 
   const renderLinks = (links: LinksTypes[]) => links.map((link: LinksTypes) => (
     <li key={link.to}>
-      <NavLink
-        activeClassName={classes.NavLinkActive}
+      <NavLinkWrap
         exact={link.exact}
         to={link.to}
       >
@@ -50,7 +49,7 @@ const Navbar: FC = () => {
         /> */}
 
         { link.component }
-      </NavLink>
+      </NavLinkWrap>
     </li>
   ));
 

@@ -84,8 +84,14 @@ export const NavImg = styled.img`
   filter: invert(100%);
 `;
 
-export const NavLinkActive = styled(NavLink)`
-  img {
-    filter: invert(0%);
+const activeClassName = 'active';
+
+export const NavLinkWrap = styled(NavLink).attrs({
+  activeClassName,
+})`
+  &.${activeClassName} {
+    img {
+      filter: invert(0%);
+    }
   }
 `;
