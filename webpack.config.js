@@ -36,8 +36,14 @@ module.exports = {
   ],
   output: {
     filename: '[name].[hash].js',
+    chunkFilename: '[name].[hash].js',
     path: path.resolve(__dirname, 'build'),
     publicPath: '',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   watch: true,
   devServer: {
@@ -84,7 +90,7 @@ module.exports = {
     },
   },
   plugins: [
-    new BundleAnalyzerPlugin(), // uncomment to analyze the bundle
+    // new BundleAnalyzerPlugin(), // uncomment to analyze the bundle
     new CleanWebpackPlugin(),
     new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),

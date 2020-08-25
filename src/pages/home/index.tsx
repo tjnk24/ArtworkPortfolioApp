@@ -1,16 +1,16 @@
 import React, {
   FC,
+  lazy,
+  Suspense,
   useState,
   useEffect,
   useCallback,
 } from 'react';
-import Carousel, { Modal, ModalGateway } from 'react-images';
 import PhotoGallery from 'react-photo-gallery';
-
-import CustomView from '@components/custom-view';
 import getPhotos from '@helpers/api';
-
 import HomeWrap from './style';
+
+const ModalImage = lazy(() => import('@components/modal-image'));
 
 const Home: FC = () => {
   const [profileOpened, setProfileOpened] = useState(false);
@@ -58,17 +58,14 @@ const Home: FC = () => {
         />
         )}
       </HomeWrap>
-      <ModalGateway>
-        {profileOpened && (
-        <Modal closeOnBackdropClick onClose={closeLightbox}>
-          <Carousel
-            currentIndex={currentImage}
-            views={photos}
-            components={{ View: CustomView }}
-          />
-        </Modal>
-        )}
-      </ModalGateway>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ModalImage
+          profileOpened={profileOpened}
+          closeLightbox={closeLightbox}
+          currentImage={currentImage}
+          photos={photos}
+        />
+      </Suspense>
     </div>
   );
 };
