@@ -4,6 +4,7 @@ const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -83,6 +84,7 @@ module.exports = {
     },
   },
   plugins: [
+    new BundleAnalyzerPlugin(), // uncomment to analyze the bundle
     new CleanWebpackPlugin(),
     new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
