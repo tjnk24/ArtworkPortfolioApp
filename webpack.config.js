@@ -38,7 +38,7 @@ module.exports = {
     filename: '[name].[hash].js',
     chunkFilename: '[name].[hash].js',
     path: path.resolve(__dirname, 'build'),
-    publicPath: '',
+    publicPath: development ? '' : 'build/',
   },
   optimization: {
     splitChunks: {
@@ -52,7 +52,7 @@ module.exports = {
     historyApiFallback: true,
   },
   mode: development ? 'development' : 'production',
-  devtool: 'source-map',
+  devtool: development ? 'source-map' : false,
   module: {
     rules: [
       {
@@ -74,7 +74,7 @@ module.exports = {
         options: {
           context: path.resolve(__dirname, 'src'),
           publicPath: '',
-          name: development ? '[path][name].[ext]' : '[name]-[hash:6].[ext]',
+          name: '[name].[ext]',
           limit: 1000,
           esModule: false,
         },
@@ -98,6 +98,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      favicon: './public/favicon.ico',
     }),
     new MiniCssExtractPlugin({
       filename: development ? '[name].css' : '[name].[hash].css',

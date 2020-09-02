@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import PhotoGallery from 'react-photo-gallery';
 import getPhotos from '@helpers/api';
+import Preloader from '@components/preloader';
 import HomeWrap from './style';
 
 const ModalImage = lazy(() => import('@components/modal-image'));
@@ -49,14 +50,14 @@ const Home: FC = () => {
   return (
     <div>
       <HomeWrap>
-        {!isLoading && (
-        <PhotoGallery
-          photos={photos}
-          direction="column"
-          columns={columns}
-          onClick={openLightbox}
-        />
-        )}
+        {!isLoading ? (
+          <PhotoGallery
+            photos={photos}
+            direction="column"
+            columns={columns}
+            onClick={openLightbox}
+          />
+        ) : (<Preloader />)}
       </HomeWrap>
       <Suspense fallback={<div>Loading...</div>}>
         <ModalImage

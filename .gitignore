@@ -1,4 +1,5 @@
 build/
+misc/
 node_modules/
 .env
 *.log
