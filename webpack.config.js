@@ -49,7 +49,6 @@ module.exports = {
       chunks: 'all',
     },
   },
-  watch: true,
   devServer: {
     port: 3000,
     contentBase: path.resolve(__dirname, 'src'),
