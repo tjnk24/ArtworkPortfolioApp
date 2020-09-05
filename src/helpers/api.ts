@@ -1,6 +1,7 @@
 import { PhotoDataTypes, PhotoTypes } from './types';
 
 const getPhotos = async (): Promise<PhotoDataTypes[]> => {
+  console.log(process.env.API_URL);
   const photoData = await fetch(`${process.env.API_URL}/photo`)
     .then((res) => {
       console.log(res);
