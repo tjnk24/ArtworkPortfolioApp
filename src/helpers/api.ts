@@ -2,12 +2,14 @@ import { PhotoDataTypes, PhotoTypes } from './types';
 
 const getPhotos = async (): Promise<PhotoDataTypes[]> => {
   const photoData = await fetch(`${process.env.API_URL}/photo`)
-    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      return res.text();
+    })
+    .then((text) => JSON.parse(text))
     .catch((error) => {
       throw new Error(error);
     });
-
-  console.log(photoData);
 
   if (!photoData.success || photoData.photos.count < 1) { return []; }
 
