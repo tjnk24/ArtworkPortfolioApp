@@ -95,9 +95,9 @@ module.exports = {
   plugins: [
     // new BundleAnalyzerPlugin(), // uncomment to analyze the bundle
     new CleanWebpackPlugin(),
-    new DefinePlugin({
-      ...envKeys,
-    }),
+    // new DefinePlugin({
+    //   ...envKeys,
+    // }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.ico',
