@@ -14,7 +14,7 @@ const env = dotenv.config().parsed;
 
 let envKeys = {};
 
-if (process.env.NODE_ENV === 'development') {
+if (development) {
   envKeys = Object.keys(env).reduce((prev, next) => {
     const previous = prev;
     previous[`process.env.${next}`] = JSON.stringify(env[next]);

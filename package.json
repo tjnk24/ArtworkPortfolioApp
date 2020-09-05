@@ -12,9 +12,8 @@
     "yarn": "1.22.4"
   },
   "scripts": {
-    "start": "node server.js",
-    "heroku-postbuild": "webpack -p",
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "start": "node server.js",
     "build": "cross-env NODE_ENV=production webpack -p",
     "lint": "eslint ./src/**"
   },
