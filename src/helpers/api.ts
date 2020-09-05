@@ -4,6 +4,8 @@ const getPhotos = async (): Promise<PhotoDataTypes[]> => {
   const response = await fetch(`${process.env.API_URL}/photo`);
   const photoData = await response.json();
 
+  console.log(photoData);
+
   if (!photoData.success || photoData.photos.count < 1) { return []; }
 
   return photoData.photos.rows.map((photo: PhotoTypes) => ({
