@@ -96,7 +96,6 @@ module.exports = {
     // new BundleAnalyzerPlugin(), // uncomment to analyze the bundle
     new CleanWebpackPlugin(),
     new DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       ...envKeys,
     }),
     new HtmlWebpackPlugin({
