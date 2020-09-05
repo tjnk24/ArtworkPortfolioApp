@@ -12,13 +12,14 @@ const development = process.env.NODE_ENV !== 'production';
 
 const env = dotenv.config().parsed;
 
+console.log('webpack-config', env);
+
 const envKeys = Object.keys(env).reduce((prev, next) => {
   const previous = prev;
   previous[`process.env.${next}`] = JSON.stringify(env[next]);
   return previous;
 }, {});
 
-console.log('webpack-config', env);
 
 const cssLoaders = [
   {
