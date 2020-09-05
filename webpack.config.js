@@ -12,11 +12,15 @@ const development = process.env.NODE_ENV !== 'production';
 
 const env = dotenv.config().parsed;
 
-const envKeys = Object.keys(env).reduce((prev, next) => {
-  const previous = prev;
-  previous[`process.env.${next}`] = JSON.stringify(env[next]);
-  return previous;
-}, {});
+let envKeys = {};
+
+if (process.env.NODE_ENV === 'development') {
+  envKeys = Object.keys(env).reduce((prev, next) => {
+    const previous = prev;
+    previous[`process.env.${next}`] = JSON.stringify(env[next]);
+    return previous;
+  }, {});
+}
 
 const cssLoaders = [
   {
