@@ -4,7 +4,6 @@ const Preloader: FC = () => (
   <svg
     style={{
       margin: 'auto',
-      background: 'rgb(255, 255, 255)',
       display: 'block',
       shapeRendering: 'auto',
     }}

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import Carousel, { ModalGateway, Modal } from 'react-images';
-import CustomView from '@components/custom-view';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 import { ModalImageProps } from './types';
 
@@ -8,19 +8,25 @@ const ModalImage: FC<ModalImageProps> = ({
   profileOpened,
   closeLightbox,
   currentImage,
+  setCurrentImage,
   photos,
-}) => (
-  <ModalGateway>
-    {profileOpened && (
-      <Modal closeOnBackdropClick onClose={closeLightbox}>
-        <Carousel
-          currentIndex={currentImage}
-          views={photos}
-          components={{ View: CustomView }}
-        />
-      </Modal>
-    )}
-  </ModalGateway>
-);
+}) => {
+  const moveToPrevious = () => setCurrentImage((currentImage + photos.length - 1) % photos.length);
+
+  const moveToNext = () => setCurrentImage((currentImage + 1) % photos.length);
+
+  return (profileOpened && (
+  <Lightbox
+    mainSrc={photos[currentImage].src}
+    nextSrc={photos[(currentImage + 1) % photos.length].src}
+    prevSrc={photos[(currentImage + photos.length - 1) % photos.length].src}
+    onCloseRequest={closeLightbox}
+    onMovePrevRequest={moveToPrevious}
+    onMoveNextRequest={moveToNext}
+    imageTitle={photos[currentImage].header}
+    imageCaption={photos[currentImage].text}
+  />
+  ));
+};
 
 export default ModalImage;

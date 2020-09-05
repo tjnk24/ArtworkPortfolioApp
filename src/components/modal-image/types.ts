@@ -1,9 +1,10 @@
 import { PhotoDataTypes } from '@helpers/types';
-import { ViewType } from 'react-images';
+import { SetStateAction, Dispatch } from 'react';
 
 export type ModalImageProps = {
-  profileOpened : boolean;
-  closeLightbox : () => void;
-  currentImage  : number;
-  photos        : ViewType[];
+  profileOpened   : boolean;
+  closeLightbox   : () => void;
+  currentImage    : number;
+  setCurrentImage : Dispatch<SetStateAction<number>>;
+  photos          : PhotoDataTypes[];
 };

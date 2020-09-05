@@ -64,6 +64,7 @@ const Home: FC = () => {
           profileOpened={profileOpened}
           closeLightbox={closeLightbox}
           currentImage={currentImage}
+          setCurrentImage={setCurrentImage}
           photos={photos}
         />
       </Suspense>
