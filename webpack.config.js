@@ -12,13 +12,13 @@ const development = process.env.NODE_ENV !== 'production';
 
 const env = dotenv.config().parsed;
 
-console.log('webpack-config', env);
+console.log('webpack-config=============', process.env);
 
-const envKeys = Object.keys(env).reduce((prev, next) => {
-  const previous = prev;
-  previous[`process.env.${next}`] = JSON.stringify(env[next]);
-  return previous;
-}, {});
+// const envKeys = Object.keys(env).reduce((prev, next) => {
+//   const previous = prev;
+//   previous[`process.env.${next}`] = JSON.stringify(env[next]);
+//   return previous;
+// }, {});
 
 const cssLoaders = [
   {
@@ -93,10 +93,10 @@ module.exports = {
   plugins: [
     // new BundleAnalyzerPlugin(), // uncomment to analyze the bundle
     new CleanWebpackPlugin(),
-    new DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      ...envKeys,
-    }),
+    // new DefinePlugin({
+    //   'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    //   ...envKeys,
+    // }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.ico',
