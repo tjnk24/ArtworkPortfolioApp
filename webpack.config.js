@@ -20,7 +20,6 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
   return previous;
 }, {});
 
-
 const cssLoaders = [
   {
     loader: development ? 'style-loader' : MiniCssExtractPlugin.loader,
