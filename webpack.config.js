@@ -12,13 +12,19 @@ const development = process.env.NODE_ENV !== 'production';
 
 const env = dotenv.config().parsed;
 
-console.log('webpack-config=============', process.env);
+let envKeys = {};
 
-// const envKeys = Object.keys(env).reduce((prev, next) => {
-//   const previous = prev;
-//   previous[`process.env.${next}`] = JSON.stringify(env[next]);
-//   return previous;
-// }, {});
+if (development) {
+  envKeys = Object.keys(env).reduce((prev, next) => {
+    const previous = prev;
+    previous[`process.env.${next}`] = JSON.stringify(env[next]);
+    return previous;
+  }, {});
+} else {
+  envKeys = {
+    'process.env.API_URL': JSON.stringify(process.env.API_URL),
+  };
+}
 
 const cssLoaders = [
   {
@@ -95,7 +101,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.API_URL': JSON.stringify(process.env.API_URL),
+      ...envKeys,
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
