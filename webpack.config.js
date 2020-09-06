@@ -93,10 +93,10 @@ module.exports = {
   plugins: [
     // new BundleAnalyzerPlugin(), // uncomment to analyze the bundle
     new CleanWebpackPlugin(),
-    // new DefinePlugin({
-    //   'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    //   ...envKeys,
-    // }),
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.API_URL': JSON.stringify(process.env.API_URL),
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.ico',
